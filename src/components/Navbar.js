@@ -1,9 +1,11 @@
+import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { logOut } from "../auth/firebase";
-
+import { AuthContext } from "../context/AuthContext";
 const Navbar = () => {
-  const currentUser = { displayName: "felix" };
+  // const currentUser = { displayName: "felix" };
   const navigate = useNavigate();
+  const  currentUser  = useContext(AuthContext);
   return (
     <div>
       <nav className="navbar navbar-expand-lg">
