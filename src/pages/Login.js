@@ -11,7 +11,7 @@ const Login = () => {
     signIn(email, password, navigate);
   };
   const handleProviderLogin = () => {
-    signUpProvider();
+    signUpProvider(navigate);
   };
 
   return (

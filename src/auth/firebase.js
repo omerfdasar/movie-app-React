@@ -9,6 +9,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
 } from "firebase/auth";
+import { toast } from "react-toastify";
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_apiKey,
   authDomain: process.env.REACT_APP_authDomain,
@@ -26,7 +27,7 @@ export const createUser = async (email, password, displayName, navigate) => {
     let userCredential = await createUserWithEmailAndPassword(
       auth,
       email,
-      password,
+      password
       // displayName
     );
     await updateProfile(auth.currentUser, {
@@ -53,15 +54,12 @@ export const signIn = async (email, password, navigate) => {
 };
 export const logOut = () => {
   signOut(auth);
-  alert("logged out succesfully");
 };
 
 export const userObserver = (setCurrentUser) => {
   onAuthStateChanged(auth, (currentUser) => {
     if (currentUser) {
       setCurrentUser(currentUser);
-      console.log(currentUser, "oooo");
-      // ...
     } else {
       // User is signed out
       setCurrentUser(false);
