@@ -5,6 +5,7 @@ import { AuthContext } from "../context/AuthContext";
 const API_KEY = process.env.REACT_APP_TMDB_KEY;
 const FEATURED_API = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}`;
 const SEARCH_API = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=`;
+
 const Main = () => {
   const currentUser = useContext(AuthContext);
   const [movies, setMovies] = useState([]);
@@ -40,7 +41,9 @@ const Main = () => {
         />
         <button type="submit">Search</button>
       </form>
-      <div className="flex justify-content-center flex-wrap">
+      <div
+        style={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}
+      >
         {movies.map((movie) => (
           <MovieCard key={movie.id} {...movie} movie={movie} />
         ))}
