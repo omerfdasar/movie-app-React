@@ -49,7 +49,7 @@ export const signIn = async (email, password, navigate) => {
     );
     navigate("/");
   } catch (err) {
-    alert(err.message);
+    toast(err.message);
   }
 };
 export const logOut = () => {
@@ -74,6 +74,7 @@ export const signUpProvider = (navigate) => {
       // This gives you a Google Access Token. You can use it to access the Google API.
       console.log(result);
       navigate("/");
+      toast.success(`Logged in as ${result.user.displayName}`);
     })
     .catch((error) => {
       // Handle Errors here.

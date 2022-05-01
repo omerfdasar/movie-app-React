@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import { signIn, signUpProvider } from "../auth/firebase";
 
 const Login = () => {
@@ -9,11 +10,13 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     signIn(email, password, navigate);
-  };
-  const handleProviderLogin = () => {
-    signUpProvider(navigate);
+    toast("bsubmitttt");
   };
 
+  const handleProviderLogin = () => {
+    signUpProvider(navigate);
+    
+  };
   return (
     <div className="d-flex justify-content-center">
       <div className="form-image">
