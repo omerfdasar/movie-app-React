@@ -42,11 +42,7 @@ export const createUser = async (email, password, displayName, navigate) => {
 
 export const signIn = async (email, password, navigate) => {
   try {
-    let userCredential = await signInWithEmailAndPassword(
-      auth,
-      email,
-      password
-    );
+    await signInWithEmailAndPassword(auth, email, password);
     navigate("/");
   } catch (err) {
     toast(err.message);

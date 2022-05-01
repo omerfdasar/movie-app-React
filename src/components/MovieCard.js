@@ -18,7 +18,10 @@ const MovieCard = ({ title, poster_path, overview, id, vote_average }) => {
           : toast.warn("Please login to see details")
       }
     >
-      <img src={poster_path ? IMG_API + poster_path : defaultImage} />
+      <img
+        src={poster_path ? IMG_API + poster_path : defaultImage}
+        alt="film-poster"
+      />
       <div className="d-flex align-items-baseline justify-content-between p-1 text-white">
         <h5>{title}</h5>
         {currentUser && (
