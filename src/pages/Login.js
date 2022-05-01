@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 import { signIn, signUpProvider } from "../auth/firebase";
 
 const Login = () => {
