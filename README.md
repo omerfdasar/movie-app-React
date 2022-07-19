@@ -7,6 +7,8 @@
 
 Project aims to create a Movie App.
 
+![project-img4](https://user-images.githubusercontent.com/93737841/179793804-50be3a79-ef54-4580-91e3-7bc63c6bb29c.jpg)
+
 ## Problem Statement
 
 - We are adding a new project to our portfolios. So you and your colleagues have started to work on the project.
